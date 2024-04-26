@@ -1,8 +1,13 @@
+import PropTypes from 'prop-types';
 
-const TextComponent = ()=>{
+const TextComponent = ({text})=>{
     return(
-      <h1>Hi! there</h1>
+      <h1>{text}</h1>
     );
+};
+
+TextComponent.propTypes = {
+    text: PropTypes.string.isRequired
 };
 
 export default TextComponent;

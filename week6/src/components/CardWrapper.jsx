@@ -9,7 +9,7 @@ const CardWrapper = ({children})=>{
     );
   };
   
-  CardWrapper.propTypes = {
+CardWrapper.propTypes = {
     children: PropTypes.node.isRequired,
 };
 

@@ -9,8 +9,9 @@ const App = ()=>{
         <h1>Ajay</h1>
       </CardWrapper>
       <CardWrapper>
-        <TextComponent text = "Aman"/>
-      </CardWrapper>      
+        <TextComponent text="This is Ajay"/>
+      </CardWrapper>
+           
     </div>
   );
 };
