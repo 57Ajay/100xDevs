@@ -1,0 +1,22 @@
+.Topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f8ff;
+  }
+  
+  .Topbar button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .Topbar button:hover {
+    background-color: #f0f8ff;
+    padding: 9px 14px;
+  }
+  
