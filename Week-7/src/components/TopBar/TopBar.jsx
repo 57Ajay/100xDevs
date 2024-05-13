@@ -13,11 +13,16 @@ export const  TopBar=()=> {
         navigate("/dashboard");
     }, [navigate]);
 
+    const propDrill = useCallback(()=>{
+        navigate('/prop-drill')
+    }, [navigate]);
+
   return (
     <Fragment>
         <div className='Topbar'>
             <button onClick={lanPage}>Landing Page</button>
             <button onClick={dashboard}>Dashboard</button>
+            <button onClick={propDrill}>Prop&ContextAPI</button>
         </div>
     </Fragment>
   )
