@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/pages/Dashboard";
-import Landing from "./components/pages/Landing";
+
 const App=()=> {
   return (
     <Fragment>
