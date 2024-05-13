@@ -1,16 +1,26 @@
-import { Fragment } from "react";
+import { Fragment, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const Dashboard = lazy(()=>import("./components/Pages/Dashboard"));
+const Landing = lazy(()=>import("./components/Pages/Landing"));
+
+import "./App.css";
+
 
 const App=()=> {
   return (
     <Fragment>
-      <div>
-        <h1>Hi this is top bar</h1>
-      </div>
       <BrowserRouter>
+      
         <Routes>
-          <Route path="/" element={<Landing/>} />
-          <Route path="/Dashboard" element={<Dashboard/>} />
+          <Route path="/" element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <Landing/>
+          </Suspense>} />
+          <Route path="/dashboard" element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <Dashboard/>
+          </Suspense>}/>
         </Routes>
       </BrowserRouter>
     </Fragment>
