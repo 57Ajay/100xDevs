@@ -1,9 +1,0 @@
-.cardWrapper {
-    display: flex; /* Use flexbox */
-    flex-direction: row; /* Arrange children horizontally */
-    justify-content: space-between; /* Add space between children */
-    align-items: center; /* Align children vertically */
-    margin-bottom: 2px; /* Add some space between cardWrapper elements */
-    border: 2px solid black;
-  }
-  
