@@ -17,12 +17,18 @@ export const  TopBar=()=> {
         navigate('/prop-drill')
     }, [navigate]);
 
+    const counter = useCallback(()=>{
+        navigate('/Counter')
+    }, [navigate]);
+    
   return (
     <Fragment>
         <div className='Topbar'>
             <button onClick={lanPage}>Landing Page</button>
             <button onClick={dashboard}>Dashboard</button>
-            <button onClick={propDrill}>Prop&ContextAPI</button>
+            <button onClick={propDrill}>API</button>
+            <button onClick={counter}>CounterRecoil</button>
+
         </div>
     </Fragment>
   )
