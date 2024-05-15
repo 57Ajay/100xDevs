@@ -1,14 +1,13 @@
 import { Fragment } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import countAtom from './Store/Atoms/Count';
-
+import EvenSelector from "./Store/Atoms/EvenSelector";
 const Count = () => {
     return (
         <Fragment>
-            
-                <CountRenderer /><br />
-                <Buttons />
-           
+            <CountRenderer /><br />
+            <Buttons /><br /><br />
+            <Even />
         </Fragment>
     );
 };
@@ -48,6 +47,11 @@ const Buttons = () => {
             </button>
         </Fragment>
     );
+};
+
+const Even=()=>{
+    const count = useRecoilValue(EvenSelector);
+    return count ? "It is Even" : "It is Odd"
 };
 
 const CounterApp = () => {
