@@ -9,6 +9,7 @@ const CounterApp  =lazy(()=> import("./components7.2/CounterApp.jsx"));
 
 import "./App.css";
 import { TopBar } from "./components/TopBar/TopBar";
+import Renderer from "./components7.3/Renderer.jsx";
 
 const App=()=> {
   return (
@@ -40,6 +41,7 @@ const App=()=> {
 
           </Routes>
         </BrowserRouter>
+        <Renderer />
       </RecoilRoot>
     </Fragment>
   )
