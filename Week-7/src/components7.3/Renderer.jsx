@@ -1,37 +1,38 @@
-import { Fragment } from "react"
-import './Renderer.css'
-import {  useRecoilValue } from "recoil";
-import { NetworkAtom, jobsAtom, messagingAtom, notificationsAtom } from "./atoms/atoms";
+import { Fragment } from "react";
+import './Renderer.css';
+import { useRecoilValue } from "recoil";
+import { notificationsAtom } from "./atoms/atoms";
+import { totalNotificationsSelector } from "./atoms/selector";
+
 import PropTypes from 'prop-types';
 
-const  Renderer=()=> {
-    const networkNotificationCount = useRecoilValue(NetworkAtom);
-    const jobsNotificationCount = useRecoilValue(jobsAtom);
-    const messagingNotificationCount = useRecoilValue(messagingAtom);
-    const notificationsNotificationCount = useRecoilValue(notificationsAtom);
+const Renderer = () => {
+    const { network, jobs, messaging, notifications } = useRecoilValue(notificationsAtom);
 
-    const ValueRenderer = ({value})=>{
-        const val = value>=99 ? "99+" : value; 
-        return <span>{val}</span>
+    const ValueRenderer = ({ value }) => {
+        const val = value >= 99 ? "99+" : value;
+        return <span>{val}</span>;
     };
+
     ValueRenderer.propTypes = {
         value: PropTypes.number.isRequired,
     };
-    
-  return (
-    <Fragment>
-        <div className="full-recoil-container">
-            <button>Home</button>
 
-            <button>My Network({<ValueRenderer value={networkNotificationCount}/>})</button>
-            <button>Jobs({<ValueRenderer value={jobsNotificationCount}/>})</button>
-            <button>Messaging({<ValueRenderer value={messagingNotificationCount}/>})</button>
-            <button>Notifications({<ValueRenderer value={notificationsNotificationCount} />})</button>
+    const totalNotificationCount = useRecoilValue(totalNotificationsSelector);
 
-            <button>Me</button>
-        </div>
-    </Fragment>
-  );
+    return (
+        <Fragment>
+            <div className="full-recoil-container">
+                <button>Home</button>
+
+                <button>My Network({<ValueRenderer value={network} />})</button>
+                <button>Jobs({<ValueRenderer value={jobs} />})</button>
+                <button>Messaging({<ValueRenderer value={messaging} />})</button>
+                <button>Notifications({<ValueRenderer value={notifications} />})</button>
+                <button>Me({<ValueRenderer value={totalNotificationCount} />})</button>
+            </div>
+        </Fragment>
+    );
 };
 
 export default Renderer;
