@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 const App=()=> {
   return (
     <Fragment>
-      <h1>Web3</h1>
+      <RevenueCard />
     </Fragment>
   )
 }
